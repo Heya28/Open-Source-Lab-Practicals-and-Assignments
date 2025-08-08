@@ -36,3 +36,6 @@ You'll see a prompt: Save modified buffer?
 i.  ) Press Y for Yes (to save)
 ii. ) Press N for No (to exit without saving)
 
+11. To exit the git log ( check the entire version history )
+Press q 
+

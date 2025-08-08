@@ -1,2 +1,38 @@
-Using git bash for linux based commands
-1. Remove existing exp 2 file ( which already had some content ) 
+Using git bash to use linux based commands:
+1. Remove an empty directory
+Command : rmdir dirname
+
+2. Remove a file
+Command : rm filename
+
+3. Remove a directory with some content
+Command : rm -r dirname
+
+4. Make a directory:
+Command : mkdir dirname
+
+5. cd dirname
+
+6. Make a file:
+Command : "touch filename.txt"
+
+7. Add one line content that overwrites the previous content: 
+Command : echo "Your content" > filename.txt 
+( This shall create a new file if it does not exist )
+
+8. Add one line content that appends to prev content:
+Command : echo " Content " >> filename.txt
+
+9. Change Filename:
+Command : mv oldfilename(.txt) newfilename(.txt)
+
+10. Edit Filename
+Command : nano filename.txt
+This is interactive and the easiest method.
+
+To Exit Nano:
+Ctrl X
+You'll see a prompt: Save modified buffer?
+i.  ) Press Y for Yes (to save)
+ii. ) Press N for No (to exit without saving)
+

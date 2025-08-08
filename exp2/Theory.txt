@@ -1,0 +1,17 @@
+Using git bash to use linux based commands:
+1. remove an empty directort
+Command : rm dirname
+2. Remove a file
+Command : rm filename
+3. Remove a directory with some content
+Command : rm -r dirname
+4. Make a directory:
+Command : mkdir dirname
+5. cd dirname
+6. Make a file:
+Command : "touch filename.txt"
+7. Add one line content that overwrites the previous content: 
+Command : echo "Your content" > filename.txt 
+( This shall create a new file if it does not exist )
+8. Add one line content that appends to prev content:
+Command : echo " Content " >> filename.txt

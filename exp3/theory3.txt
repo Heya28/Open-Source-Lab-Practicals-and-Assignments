@@ -1,1 +1,28 @@
 WSL Commands and Branching today
+
+1. What is a branch ?
+a. Trunk  of tree -> must always contain STABLE, WORKING & PRODUCTION-READY CODE.
+b. A branch is a movable pointer to a specific commit. New line of development from this exact point in history. Like creating a paralle universe for your code. 
+
+2. Worflow 
+a. git checkout main -> switches to main branch
+b. git pull origin main ( git pull as used -u before.) 
+Why this is crucial:
+You always want to start a new feature from the most up-to-date version of the project.
+If you don't you might build your new feature on top of your old code, leading to massive headaches and conflicts later.
+c. git checkout -b new-feature-name
+This is a shortcut as it creates both a new branch ( -b ) and immediately switches you to checkout. Branch name should be descriptive eg user-login-form ; fix-nav-bar etc
+Source: Gemini
+d. echo ".." > my_file.txt
+e. git add .
+Working directory to the staging area. 
+Why this is a separate step:
+Precision -> Changes to 5 files made but only three of them are related to the new feature. git add lets one select only those three files to be included in the next commit.
+f. git commit -m "message"
+Permanent snapshot of it to project's history
+g. Sharing the work -> PULL REQUEST
+git push origin new-feature-name
+Uploads your new branch and all its commits from local machine to Github 
+h. Creating a PR on Github
+NOT COMMAND LINE ACTION. 
+PR is where the code-review happens. 

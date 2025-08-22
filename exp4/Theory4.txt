@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Demonstrating Conflict : Lola makes some updates
+=======
+Demonstrating Conflict : Conrad says he is Sorry
+>>>>>>> conrad

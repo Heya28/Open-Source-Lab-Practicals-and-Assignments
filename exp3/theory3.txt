@@ -48,6 +48,7 @@ FIRST ERROR
 uncommitted local changes
 when came back to terminal, was on f2 branch and made some more changes to exp3/theory3.txt
 then tried to switch back to main branch without commiting changes . Git protects from losing work. If Git has allowed to switch, the version of exp3/theory.txt might be different and unsaved work would have been lost.
+
 SECOND ERROR
 git push origin main when i am on f2 branch.
 ERROR Msg 
@@ -56,6 +57,7 @@ hint: Updates were rejected because the remote contains work that you do not
 hint: have locally.
 REASON:
 Local main branc is out of date. Merged pull request has a commit
+
 THIRD ERROR
 git pull origin main 
 It fetched new history from GitHub and merges it into CURRENR BRANCH ( f2 )

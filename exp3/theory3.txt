@@ -2,27 +2,73 @@ WSL Commands and Branching today
 
 1. What is a branch ?
 a. Trunk  of tree -> must always contain STABLE, WORKING & PRODUCTION-READY CODE.
-b. A branch is a movable pointer to a specific commit. New line of development from this exact point in history. Like creating a paralle universe for your code. 
+b. A branch is a movable pointer to a specific commit. New line of development from this exact point in history. Like creating a parallel universe for your code. 
 
 2. Worflow 
 a. git checkout main -> switches to main branch
+
 b. git pull origin main ( git pull as used -u before.) 
 Why this is crucial:
 You always want to start a new feature from the most up-to-date version of the project.
 If you don't you might build your new feature on top of your old code, leading to massive headaches and conflicts later.
+
 c. git checkout -b new-feature-name
 This is a shortcut as it creates both a new branch ( -b ) and immediately switches you to checkout. Branch name should be descriptive eg user-login-form ; fix-nav-bar etc
-Source: Gemini
+
 d. echo ".." > my_file.txt
+
 e. git add .
 Working directory to the staging area. 
 Why this is a separate step:
 Precision -> Changes to 5 files made but only three of them are related to the new feature. git add lets one select only those three files to be included in the next commit.
+
 f. git commit -m "message"
 Permanent snapshot of it to project's history
+
 g. Sharing the work -> PULL REQUEST
 git push origin new-feature-name
 Uploads your new branch and all its commits from local machine to Github 
+
 h. Creating a PR on Github
 NOT COMMAND LINE ACTION. 
 PR is where the code-review happens. 
+
+h. CLEAN UP:
+When the feature is merged, clean up local env
+git checkout main
+git pull origin main ( sync local main with merged changes )
+git branch -d add-user-profile #delete the local branch
+git push origin --delete add-user-profile # delete the remote branch
+
+
+#### KEY ERRORS MADE #####
+1. Created an f2 branch and made a commit that added test.txt and exp3/theory3.txt and successfully pushed it to GitHub.
+At this point, went to Github and created a merged pull request. When I merged a pr , commit from f2 branch was added to main branch's history on github.
+FIRST ERROR
+uncommitted local changes
+when came back to terminal, was on f2 branch and made some more changes to exp3/theory3.txt
+then tried to switch back to main branch without commiting changes . Git protects from losing work. If Git has allowed to switch, the version of exp3/theory.txt might be different and unsaved work would have been lost.
+SECOND ERROR
+git push origin main when i am on f2 branch.
+ERROR Msg 
+! [rejected]        main -> main (fetch first)
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally.
+REASON:
+Local main branc is out of date. Merged pull request has a commit
+THIRD ERROR
+git pull origin main 
+It fetched new history from GitHub and merges it into CURRENR BRANCH ( f2 )
+Since, I was on f2 branch, the updated merge branch into f2 branch. 
+
+FINAL ISSUE:
+! [rejected]        main -> main (non-fast-forward)
+Local main branch is still behind remote main branch. All changes have been happening on f2 branch. Local main has not been touched or updated at all.
+
+TO FIX THE ISSUE:
+git checkout main
+git pull origin main
+git merge f2 
+# You have a new commit on the f2 branch that you want in main. The best way to do this is with a merge.
+git push origin main
+( Source: Gemini )

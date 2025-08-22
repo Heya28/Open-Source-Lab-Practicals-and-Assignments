@@ -1,1 +1,1 @@
-Experiment 4 Theory: Resolving Merge Conflicts 
+Demonstrating Conflict : Lola makes some updates
